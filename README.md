@@ -30,7 +30,7 @@ Table of Contents
 <a name="introduction"></a>
 # Introduction
 
-This aws-etl-orchestrator is a fork based on AWS_Samples [aws-etl-orchestrator] (https://github.com/aws-samples/aws-etl-orchestrator) but improved now including a Glue Python shell job for Marketing Data processing and a Spark job for Sales Data processing.
+This aws-etl-orchestrator is a fork based on AWS_Samples [aws-etl-orchestrator](https://github.com/aws-samples/aws-etl-orchestrator) but improved now including a Glue Python shell job for Marketing Data processing and a Spark job for Sales Data processing.
 
 Extract, transform, and load (ETL) operations collectively form the backbone of any modern enterprise data lake. It transforms raw data into useful datasets and, ultimately, into actionable insight. An ETL job typically reads data from one or more data sources, applies various transformations to the data, and then writes the results to a target where data is ready for consumption. The sources and targets of an ETL job could be relational databases in Amazon Relational Database Service (Amazon RDS) or on-premises, a data warehouse such as Amazon Redshift, or object storage such as Amazon Simple Storage Service (Amazon S3) buckets. Amazon S3 as a target is especially commonplace in the context of building a data lake in AWS.
 
