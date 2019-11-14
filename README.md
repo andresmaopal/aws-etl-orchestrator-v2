@@ -59,9 +59,9 @@ Imagine there’s a business user who needs to answer questions based on both da
 
 The steps in the ETL flow chart are: 
 
-1. **Process the Sales dataset.** Read Sales dataset. Group records by day, aggregating the Forecasted Monthly Revenue field. Rename fields to replace white space with underscores. Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
+1. **Process the Sales dataset (Spark).** Read Sales dataset. Group records by day, aggregating the Forecasted Monthly Revenue field. Rename fields to replace white space with underscores. Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
 
-2. **Process the Marketing dataset.** Read Marketing dataset. Rename fields to replace white space with underscores. Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
+2. **Process the Marketing dataset (Python Shell).** Read Marketing dataset. Rename fields to replace white space with underscores using Python shell and AWS Data Wrangler lib (https://github.com/awslabs/aws-data-wrangler). Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
 
 3. **Join Sales and Marketing datasets.** Read outputs of processing Sales and Marketing datasets. Perform an inner join of both datasets on the date field. Sort in ascending order by date. Output final joined dataset to Amazon S3, overwriting any previous outputs. 
 Solution Architecture
