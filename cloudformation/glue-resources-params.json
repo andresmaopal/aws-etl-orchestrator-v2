@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "S3ETLScriptPath",
+    "ParameterValue": "s3://step-orch-etl-scripts/etls"
+  },
+  {
+    "ParameterKey": "S3ETLOutputPath",
+    "ParameterValue": "s3://step-orch-staging"
+  },
+  {
+    "ParameterKey": "S3PYLibsPath",
+    "ParameterValue": "s3://step-orch-etl-scripts/libs"
+  },
+  {
+    "ParameterKey": "SourceDataBucketName",
+    "ParameterValue": "step-orch-raw"
+  }
+]

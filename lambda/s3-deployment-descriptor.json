@@ -1,0 +1,14 @@
+{
+  "athenarunner": {
+    "SourceS3BucketName": "step-orch-etl-scripts",
+    "SourceS3Key":"src/athenarunner.zip"
+  },
+  "gluerunner": {
+    "SourceS3BucketName": "step-orch-etl-scripts",
+    "SourceS3Key":"src/gluerunner.zip"
+  },
+  "ons3objectcreated": {
+    "SourceS3BucketName": "step-orch-etl-scripts",
+    "SourceS3Key":"src/ons3objectcreated.zip"
+  }
+}
