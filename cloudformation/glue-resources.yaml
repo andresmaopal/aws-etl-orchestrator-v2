@@ -307,7 +307,7 @@ Resources:
       }
       MaxRetries: 0
       Description: "Process Marketing data on python 3 shell."
-      MaxCapacity: 1
+      MaxCapacity: 1.0
 
   JoinMarketingAndSalesDataJob:
     Type: "AWS::Glue::Job"
