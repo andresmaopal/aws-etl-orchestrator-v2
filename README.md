@@ -30,7 +30,7 @@ Table of Contents
 <a name="introduction"></a>
 # Introduction
 
-This aws-etl-orchestrator is a fork based on aws_samples aws-etl-orchestrator https://github.com/aws-samples/aws-etl-orchestrator but improved now including a Glue Python shell job for Marketing Data processing and a Spark job for Sales Data processing.
+This aws-etl-orchestrator is a fork based on AWS_Samples [aws-etl-orchestrator] (https://github.com/aws-samples/aws-etl-orchestrator) but improved now including a Glue Python shell job for Marketing Data processing and a Spark job for Sales Data processing.
 
 Extract, transform, and load (ETL) operations collectively form the backbone of any modern enterprise data lake. It transforms raw data into useful datasets and, ultimately, into actionable insight. An ETL job typically reads data from one or more data sources, applies various transformations to the data, and then writes the results to a target where data is ready for consumption. The sources and targets of an ETL job could be relational databases in Amazon Relational Database Service (Amazon RDS) or on-premises, a data warehouse such as Amazon Redshift, or object storage such as Amazon Simple Storage Service (Amazon S3) buckets. Amazon S3 as a target is especially commonplace in the context of building a data lake in AWS.
 
@@ -61,7 +61,7 @@ The steps in the ETL flow chart are:
 
 1. **Process the Sales dataset (Spark).** Read Sales dataset. Group records by day, aggregating the Forecasted Monthly Revenue field. Rename fields to replace white space with underscores. Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
 
-2. **Process the Marketing dataset (Python Shell).** Read Marketing dataset. Rename fields to replace white space with underscores using Python shell and AWS Data Wrangler lib (https://github.com/awslabs/aws-data-wrangler). Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
+2. **Process the Marketing dataset (Python Shell).** Read Marketing dataset. Rename fields to replace white space with underscores using Python shell and [AWS Data Wrangler](https://github.com/awslabs/aws-data-wrangler) library to accelerate ETLs. And after output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
 
 3. **Join Sales and Marketing datasets (Spark).** Read outputs of processing Sales and Marketing datasets. Perform an inner join of both datasets on the date field. Sort in ascending order by date. Output final joined dataset to Amazon S3, overwriting any previous outputs. 
 Solution Architecture
