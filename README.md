@@ -63,7 +63,7 @@ The steps in the ETL flow chart are:
 
 2. **Process the Marketing dataset (Python Shell).** Read Marketing dataset. Rename fields to replace white space with underscores using Python shell and AWS Data Wrangler lib (https://github.com/awslabs/aws-data-wrangler). Output the intermediary results to Amazon S3 in compressed Parquet format. Overwrite any previous outputs. 
 
-3. **Join Sales and Marketing datasets.** Read outputs of processing Sales and Marketing datasets. Perform an inner join of both datasets on the date field. Sort in ascending order by date. Output final joined dataset to Amazon S3, overwriting any previous outputs. 
+3. **Join Sales and Marketing datasets (Spark).** Read outputs of processing Sales and Marketing datasets. Perform an inner join of both datasets on the date field. Sort in ascending order by date. Output final joined dataset to Amazon S3, overwriting any previous outputs. 
 Solution Architecture
 
 So far, this ETL workflow can be implemented with AWS Glue, with the ETL jobs being chained by using job triggers. But you might have other requirements outside of AWS Glue that are part of your end-to-end data processing workflow, such as the following:
@@ -85,7 +85,7 @@ The main flow of events starts with an AWS Step Functions state machine. This st
 
 As the state machine execution progresses, it invokes the ETL jobs. As shown in the diagram, the invocation happens indirectly through intermediary AWS Lambda functions that you author and set up in your account. We'll call this type of function an ETL Runner.
 
-While the architecture in the diagram shows Amazon Athena, Amazon EMR, and AWS Glue, **this code sample now includes two ETL Runners for both AWS Glue and Amazon Athena**. You can use these ETL Runners to orchestrate AWS Glue jobs and Amazon Athena queries. You can also follow the pattern and implement more ETL Runners to orchestrate other AWS services or non-AWS tools.
+While the architecture in the diagram shows Amazon Athena, Amazon EMR, and AWS Glue, **this code sample now includes two ETL Runners for both AWS Glue (PySpark and Python shell) and Amazon Athena**. You can use these ETL Runners to orchestrate AWS Glue jobs and Amazon Athena queries. You can also follow the pattern and implement more ETL Runners to orchestrate other AWS services or non-AWS tools.
 
 ETL Runners are invoked by [activity tasks](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html) in Step Functions. Because of the way AWS Step Functions' activity tasks work, ETL Runners need to periodically poll the AWS Step Functions state machine for tasks. The state machine responds by providing a Task object. The Task object contains inputs which enable an ETL Runner to run an ETL job.
 
