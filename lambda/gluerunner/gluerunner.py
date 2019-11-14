@@ -105,7 +105,7 @@ def start_glue_jobs(config):
                 response = glue.start_job_run(
                     JobName=glue_job_name,
                     Arguments=glue_job_args,
-                    MaxCapacity=glue_job_capacity
+                    MaxCapacity=1
                 )
 
             if glue_job_type in ["spark"]:
