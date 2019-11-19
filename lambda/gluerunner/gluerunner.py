@@ -80,8 +80,15 @@ def start_glue_jobs(config):
         task_input = ''
         try:
 
+
+
             task_input = json.loads(response['input'])
+
+            logger.info("task_input=")
+            logger.info(task_input)
+
             task_input_dict = json.loads(task_input)
+
 
             glue_job_name = task_input_dict['GlueJobName']
             glue_job_type = task_input_dict['JobType']
@@ -286,5 +293,6 @@ def handler(event, context):
     except Exception as e:
         logger.critical('*** ERROR: Glue runner lambda function failed ***')
         logger.critical(e.message)
+        return
         raise
 

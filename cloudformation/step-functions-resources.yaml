@@ -90,7 +90,7 @@ Resources:
                 Resource: "*"
       Path: "/"
 
-  # Activity resources
+  # Activity resources for SF
   GlueRunnerActivity:
     Type: "AWS::StepFunctions::Activity"
     Properties:
@@ -175,7 +175,7 @@ Resources:
                         },
                         "Prep for Process Sales Data": {
                           "Type": "Pass",
-                          "Result": "{\"GlueJobName\" : \"${ProcessSalesDataGlueJobName}\"}\", \"JobType\" : \"spark\" }",
+                          "Result": "{\"GlueJobName\" : \"${ProcessSalesDataGlueJobName}\", \"JobType\" : \"spark\" }",
                           "Next": "Process Sales Data"
                         },
                         "Process Sales Data": {

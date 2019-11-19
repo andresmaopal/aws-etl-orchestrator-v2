@@ -22,7 +22,7 @@ Parameters:
   DDBTableName:
     Type: String
     Default: "GlueRunnerActiveJobs"
-    Description: "Name of the DynamoDB table for persistence & querying of active Glue jobs' statuses."
+    Description: "Name of the DynamoDb table for persistence & querying of active Glue jobs' statuses."
 
   GlueRunnerLambdaFunctionName:
     Type: String
