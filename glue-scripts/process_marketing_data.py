@@ -23,6 +23,11 @@ dataframe = session.pandas.read_sql_athena(
     database=database_name
 )
 
+
+#Rename columns
+dataframe.rename(columns={'date': 'date', 'new visitors seo': 'new_visitors_seo', 'new visitors cpc':'new_visitors_cpc', 'new visitors social media': 'new_visitors_social_media', 'return visitors': 'return_visitors' }, inplace=True)
+
+
 #Save in parquet format on S3 and Glue Data Catalog table
 
 session.pandas.to_parquet(
